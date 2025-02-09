@@ -27,11 +27,11 @@ public partial class ToDoDbContext : DbContext
             .UseCollation("utf8mb4_0900_ai_ci")
             .HasCharSet("utf8mb4");
 
-        modelBuilder.Entity<Item>(entity =>
+        modelBuilder.Entity<Items>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
 
-            entity.ToTable("item");
+            entity.ToTable("items");
 
             entity.Property(e => e.Name).HasMaxLength(100);
         });
